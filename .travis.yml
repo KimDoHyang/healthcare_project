@@ -1,8 +1,10 @@
 language: python
 python:
-- 3.6.6
+- '3.6.6'
 install:
-- pip install -r requirements.txt
+- pip3 install -r requirements.txt
+script:
+- python3 app/manage.py runserver
 before_install:
 - openssl aes-256-cbc -K $encrypted_ee1c3de85b1f_key -iv $encrypted_ee1c3de85b1f_iv
   -in secrets.tar.enc -out secrets.tar -d
