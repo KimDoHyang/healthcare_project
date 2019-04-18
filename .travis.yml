@@ -19,7 +19,7 @@ install:
 
 before_script:
   - psql -c "CREATE DATABASE healthcare_test;" -U postgres
-  - psql -c "CREATE USER 'hanoul' WITH PASSWORD 'gksdnf11';" -U postgres
+  - psql -c "CREATE USER hanoul WITH PASSWORD 'gksdnf11';" -U postgres
   - python3 app/manage.py makemigrations
 
 script:
