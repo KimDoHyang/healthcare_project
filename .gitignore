@@ -1,5 +1,5 @@
 # migrations
-**/migrations/
+# **/migrations/
 
 
 # Created by https://www.gitignore.io/api/vim,macos,linux,django,python,windows,pycharm+all
