@@ -20,8 +20,7 @@ install:
 before_script:
   - psql -c "CREATE DATABASE healthcare_test;" -U postgres
   - psql -c "CREATE USER hanoul WITH PASSWORD 'gksdnf11';" -U postgres
-  - psql -c "GRANT ALL PRIVILEGES ON test_db.* TO 'hanoul'@'localhost';"
-#  - psql -c "ALTER USER hanoul CREATEDB;" -U postgres
+  - psql -c "ALTER USER hanoul CREATEDB;" -U postgres
   - python3 app/manage.py makemigrations
 
 script:
