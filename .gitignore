@@ -5,8 +5,9 @@
 # Created by https://www.gitignore.io/api/vim,macos,linux,django,python,windows,pycharm+all
 # Edit at https://www.gitignore.io/?templates=vim,macos,linux,django,python,windows,pycharm+all
 
-## secrets directory
+## Secrets directory & Secrets.tar for Travis CI
 /.secrets
+secrets.tar
 
 ## Static & Media(Store User-uploaded files) ROOT
 /.media
