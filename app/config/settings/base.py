@@ -55,17 +55,49 @@ AUTH_USER_MODEL = 'members.User'
 # Application definition
 
 INSTALLED_APPS = [
+    # Django-cors-headers
+    # https://github.com/ottoyiu/django-cors-headers
+    # 'corsheaders',
+
+    # DRF
+    'rest_framework',
+    # DRF Token authentication
+    'rest_framework.authtoken',
+
+    # applications
     'members',
+
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
     'django_extensions',
 ]
 
+REST_FRAMEWORK = {
+    # DRF Token authentication
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.TokenAuthentication',
+    ),
+
+    # DRF Renderer & Parser for camelCase
+    'DEFAULT_RENDERER_CLASSES': (
+        'djangorestframework_camel_case.render.CamelCaseJSONRenderer',
+    ),
+    'DEFAULT_PARSER_CLASSES': (
+        'djangorestframework_camel_case.parser.CamelCaseJSONParser',
+        # Any other parsers
+    ),
+}
+
 MIDDLEWARE = [
+    # Django CORS headers
+    # 'corsheaders.middleware.CorsMiddleware',
+    # 'django.middleware.common.CommonMiddleware',
+
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -74,6 +106,23 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+# CORS_ORIGIN_WHITELIST = (
+    # Cross Domain을 위한 설정.
+    # 프론트엔드(웹)로 부터의 요청을 받는 설정이므로, 현 시점에서는 불필요
+    # 해당 프론트엔드 도메인의 주소를 기입하면 된다.
+    # ex) cgv.netlify.com
+    # '',
+# )
+
+# CORS_ALLOW_METHODS = (
+#     'DELETE',
+#     'GET',
+#     'OPTIONS',
+#     'PATCH',
+#     'POST',
+#     'PUT',
+# )
 
 ROOT_URLCONF = 'config.urls'
 

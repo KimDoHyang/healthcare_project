@@ -29,11 +29,11 @@ script:
   - python3 app/manage.py migrate
   - python3 app/manage.py test
 
-deploy:
-  - provider: codedeploy
-    access_key_id: $AWS_ACCESS_KEY
-    secret_access_key: $AWS_SECRET_KEY
-    application: Healthcare-Lightsail
-    deployment_group: Healthcare-Test
-    region: ap-northeast-2
+#deploy:
+#  - provider: codedeploy
+#    access_key_id: $AWS_ACCESS_KEY
+#    secret_access_key: $AWS_SECRET_KEY
+#    application: Healthcare-Lightsail
+#    deployment_group: Healthcare-Test
+#    region: ap-northeast-2
 
